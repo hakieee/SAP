@@ -1,0 +1,79 @@
+<mvc:View controllerName="code2.fiori.edu01.code2fioriedu01.controller.Edu01View"
+    xmlns:mvc="sap.ui.core.mvc"     
+    xmlns="sap.m">      <!-- 폴더 경로, 
+                            xmlns:mvc 에서 :mvc는 저 mvc 안에 있는 것을 쓸라면은 태그에 mvc:View 이런식으로 쓰고 sap.m 안에 잇는거 쓸라면 그냥 원래대로 쓰면 됨
+                            구분하는 이유는 xmlns로 다 써버리면 중복되서 오류뜸. 
+                            저 mvc는 code든 뭐든 Alias 느낌이라고 생각하면 굿-->
+    <Page id="page" title="{i18n>title}">
+        <!-- <VBox>
+            <Text id="Text1" 
+                  text="Hello Code Class 5" 
+                  width = "50em" 
+                  textAlign = "Center"/>
+            <Label text="구트아카데미 dayumn !!"
+                   width="50em"
+                   design="Bold" 
+                   textAlign="Center" />
+        </VBox>
+        <Button text="Text Right" 
+                icon="sap-icon://action-settings"
+                press="textRight" /> -->
+
+
+        <!-- 1027 수업 -->
+        <VBox >
+            <Button text="{/Lecture}"      
+                    press="onShowHello" />
+        </VBox>
+
+
+
+
+
+
+
+
+
+        <!-- 1. View에 만들어진 Text2 객체를 Center로 이동시키는 Button 생성 -->
+        <!-- <VBox>
+            <Text id = "Text2" 
+                  text="자해공갈단 가입할 바엔 아싸리 노가다 나간다네"
+                  width = "50em"
+                  textAlign = "Begin" />
+        <Button text="Text Center"
+                press = "textCenter" />
+        </VBox> -->
+        
+
+
+
+        <!-- 2. View에 만들어진 Label의 Text를 End로 이동시키는 Button 생성 -->
+         <!-- <VBox>
+            <Label id="Label1"
+                   text="Oh Hell nah"
+                   width="50em"
+                   textAlign="Begin" />
+        </VBox>
+        <Button text="Text End" 
+                press="textEnd" /> -->
+
+        
+        <!-- 1. View에 Labal을 2개 그릴 것
+        2. Controller의 onInit에 아래와 같은 데이터를 만들 것
+            { Name : "본인 이름", Number : 본인 번호 }
+        3. 위에서 만든 Json Data를 View에 세팅하고 1번에서 만든 Lable에 각각 Name과 본인번호가 Json 통해서 나오게 할 것 -->
+         
+         <VBox >
+            <Label text = "{/Name}"
+                   width = "50em" />
+            <Label text = "{/Number}"
+                   width = "50em" />       
+         </VBox>
+
+
+
+
+
+
+    </Page>
+</mvc:View>

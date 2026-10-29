@@ -1,0 +1,9 @@
+{
+    "gt_member" : [
+                 {"Id": "HONG",   "Gender": "M", "Use": true, "Age": 25},
+                 {"Id": "LIM",    "Gender": "M", "Use": true, "Age": 33},
+                 {"Id": "KARINA", "Gender": "F", "Use": true, "Age": 26},
+                 {"Id": "WINTER", "Gender": "F", "Use": true, "Age": 25},
+                 {"Id": "GU",     "Gender": "M", "Use": true, "Age": 45}
+              ]
+}

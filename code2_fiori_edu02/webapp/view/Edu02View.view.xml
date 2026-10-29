@@ -1,0 +1,269 @@
+<mvc:View controllerName="code2.fiori.edu02.code2fioriedu02.controller.Edu02View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox >
+            <HBox>
+                <Text text = "{/Study/Lecture}" width = "{/Study/Width}" />
+                <Text text = "{/Study/Class}" />
+            </HBox>
+            <HBox>
+                <Label text = "{/Info/Name}" design = "{/Info/Design}"/>
+                <Label text = "{/Info/Number}"/>
+            </HBox>
+            <HBox >
+                <Input width = "{Prop>/Input/Width}" 
+                       showClearIcon="{Prop>/Input/ShowClear}" 
+                       placeholder="{Prop>/Input/PlaceHolder}" 
+                       description="{Prop>/Input/Description}" />
+            
+            </HBox>
+        </VBox>
+
+
+
+
+        <!-- Q1. 화면 구현 실습(10/27) -->
+        <VBox >
+                <Text id = "Text1"
+                      text = "오늘은 코드2기 2주차" 
+                      width = "{TextProp>/TextInfo/Width}" />
+                <HBox >
+                    <Button text = "Begin"
+                            press = "setTextAlign('Begin')" />
+                    <Button text = "Center"
+                            press = "setTextAlign('Center')" />
+                    <Button text = "Right"
+                            press = "setTextAlign('Right')" />    
+                </HBox>            
+        </VBox>
+
+
+
+
+        <!-- Q2. 화면 구현 실습(10/27) -->
+        <VBox >
+            <Label id    = "Label1" 
+                   text    = "다음주 회식" 
+                   width    = "{LabelProp>/Width}" />
+
+            <Input  id          = "Input1"
+                    width       = "{LabelProp>/Input/Width}" 
+                    placeholder = "{LabelProp>/Input/PlaceHolder}" />
+            
+            <Button text = "문자열 바꾸기"
+                    press = "TextChange" />
+        </VBox>
+
+
+
+        <VBox >
+            <Text text = "SAP Code2 Class 1"  />
+            <Text text = "Class 1 강인학"  />
+            <Label text = "구로디지털단지 2번 출구"  />
+            <Label text = "걸어서 10분거리" design="Bold" />
+
+            <HBox >
+                <Label text  = "ID" />
+                <Input width = "10em"/>
+            </HBox>
+
+            <HBox >
+                <Label text  = "Name" />
+                <Input width = "10em"/>
+            </HBox>
+
+            <HBox >
+                <Label  text    = "Age" />
+                <Input  width   = "10em"
+                        type    = "Number"/>
+            </HBox>
+
+            <HBox >
+                <Input  width       = "10em"
+                        placeholder = "Address" />
+            </HBox>
+
+            <HBox >
+                <Input  width           = "30em"
+                        showClearIcon   = "true"
+                        description     = "Please write only one hobby"/>
+            </HBox>
+        </VBox>
+
+        <VBox >
+            <!-- Text 객체를 사용해서 “SAP Code2 Class1 Fiori Text” 나오게
+            길이 200px, 중앙정렬 -->
+            <Text text = "SAP Code2 Class1 Fiori Text"
+                  width = "200px" 
+                  textAlign="Center"/>
+
+            <!-- Label 객체를 사용해서 “Class 1 Fighting”
+            길이는 20rem, 굵게 표시 -->
+            <Label text = "Class 1 Fighting"
+                   width = "20rem"
+                   design="Bold" />
+
+            <!-- 버튼을 생성하되 아래와 같이 나오게
+            비행기 아이콘과 “Airline” 이 표시된
+            비활성화 된 버튼으로 -->
+            <Button icon = "sap-icon://flight"
+                    text = "Airline" />
+
+            <!-- 종모양 아이콘과 “Bell” 이표시된 버튼생성 후
+            버튼클릭 하면 본인이름을 alert로 나오게 하고
+            버튼 길이는 100px -->
+            <Button icon = "sap-icon://bell"
+                    press = "CallMyName"
+                    width = "100px" />
+
+            <!-- 톱니바퀴 아이콘과 “Setting” 이 표시된 버튼 생성후
+            클릭하면 alert로 "설정완료" 메시지 나오게하고
+            버튼 길이는 30em -->
+            <Button icon = "sap-icon://action-settings"
+                    text = "Setting"
+                    press = "Setted"
+                    width = "30em" />
+        </VBox>
+
+
+
+            <!-- [1st Number]
+                 [2nd Number]
+                 [Result]
+                 [계산]
+            계산버튼 클릭하면 1번 2번 값을 합산하고 거기에 * 10 한
+            결과를 Result 창에 나오게 -->
+            <Input  id = "Num1"
+                    placeholder = "1st Number"
+                    showClearIcon  = "true" />
+
+            <Input  id = "Num2"
+                    placeholder = "2st Number"
+                    showClearIcon   = "true"/>
+
+            <Input  id = "Result"
+                    placeholder = "Result"
+                    showClearIcon   = "true"
+                    enabled="false"/>
+
+            <Button text = "계산"
+                    press = "CalcResult"/>
+
+
+
+            <!-- 다음의 값을 구할것
+            [밑변]
+            [높이]
+            [삼각형 넓이] (밑변 * 높이) / 2
+            [계산]  -->
+            <Input  id = "Underline"
+                    placeholder = "밑변"
+                    showClearIcon   = "true"/>
+
+            <Input  id = "Height"
+                    placeholder = "높이"
+                    showClearIcon   = "true"/>
+
+            <Input  id = "TriResult"
+                    placeholder = "삼각형 넓이"
+                    showClearIcon   = "true"
+                    enabled="false"/>
+
+            <Button text = "계산"
+                    press = "TriangleArea"/>
+
+
+
+            <!-- 다음의 값을 구할것
+                물건값 [ ]
+                할인율 [ ] 20이면 20% 할인율이란 뜻
+                할인된값 [ ] 할인된값 = 물건값 - ( 물건값 * ( 할인율 / 100 ) )
+                [계산]  -->
+            <VBox >
+                <HBox >
+                    <Text text = "물건값" />
+                    <Input  id = "PrePrice"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <HBox >
+                    <Text text = "할인율" />
+                    <Input  id = "SalePrice"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <HBox >
+                    <Text text      = "할인된 값" />
+                    <Input  id      = "ResultPrice"
+                            width   = "10em"
+                            type    = "Number" />
+                </HBox>
+
+                <Button text = "계산"
+                    press = "oDiscount"/>
+            </VBox>
+
+
+
+                <!-- 다음의 값을 구할것
+
+                물건값 [ ]
+                지불한 값 [ ]
+                할인율 [ ] 할인율 = 100 - ( (지불한값 / 물건값) * 100 )
+                [계산] -->
+            <VBox >
+                <HBox >
+                    <Text text = "물건값" />
+                    <Input  id = "Howmuch"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <HBox >
+                    <Text text = "지불한 값" />
+                    <Input  id = "Payed"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <HBox >
+                    <Text text = "할인율" />
+                    <Input  id = "SaleRate"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <Button text = "계산"
+                    press = "oSaleRate"/>
+            </VBox>
+
+
+
+            <!-- 
+            Number [ ]
+            [Match 체크]
+
+            1. Match 체크 버튼을 클릭하면 matchNum 펑션으로 가도록 할것
+            2. matchNum 펑션내에 아래와 같이 배열을 선언할것
+            let aNumber = [10, 20, 30, 40, 50];
+            for 구문을 이용해서 위에서 입력한 값이 aNumber 배열에 있는지 비교해서 있으면 alert(“Match”);
+            없으면 alert(“Un Match”); -->
+            
+            <VBox >
+                <HBox>
+                    <Text text = "Number" />
+                    <Input  id = "PutNum"
+                            width = "10em"
+                            type="Number" />
+                </HBox>
+
+                <Button text = "Match 체크"
+                        press = "matchNum" />
+                
+            
+            </VBox>
+    </Page>
+</mvc:View>
