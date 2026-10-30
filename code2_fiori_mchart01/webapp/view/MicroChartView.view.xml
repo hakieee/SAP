@@ -1,0 +1,47 @@
+<mvc:View controllerName="code2.fiori.mchart01.code2fiorimchart01.controller.MicroChartView"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:m="sap.suite.ui.microchart"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+
+<!-- Bar chart -->
+    <FlexBox width="20rem" height="15rem" alignItems="Center" class="sapUiSmallMargin">
+			<items>
+				<m:InteractiveBarChart labelWidth="25%" displayedBars = "7"
+                    bars = "{/code2Set}">   <!-- bars 이거 중요함  -->
+					<m:bars>
+						<m:InteractiveBarChartBar label="{Class}" value="{StdCount}" displayedValue="{StdCount} 명"/>
+					</m:bars>
+				</m:InteractiveBarChart>
+			</items>
+		</FlexBox>
+
+<!-- Donut chart -->
+    <FlexBox width="20rem" height="10rem" alignItems="Start" class="sapUiSmallMargin">
+		<items>
+			<m:InteractiveDonutChart selectionChanged="onSelectionChanged" displayedSegments = "7"
+                segments = "{/code2Set}">
+				<m:segments>
+					<m:InteractiveDonutChartSegment label="{Class}" value="{StdCount}" displayedValue="{StdCount} 명"/>
+				</m:segments>
+			</m:InteractiveDonutChart>
+		</items>
+	</FlexBox>
+
+<!-- Line chart -->
+    <FlexBox width="20rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+			<items>
+				<m:InteractiveLineChart selectionChanged="selectionChanged" precedingPoint="-20" displayedPoints="7"
+                points = "{/code2Set}">
+					<m:points>
+						<m:InteractiveLineChartPoint value="{StdCount}" displayedValue="{StdCount} 명" label="{Class}" />
+					</m:points>
+				</m:InteractiveLineChart>
+			</items>
+		</FlexBox>
+
+
+    </Page>
+</mvc:View>

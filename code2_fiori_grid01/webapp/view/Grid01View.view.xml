@@ -52,8 +52,8 @@
                             }" wrapping="false" />                
                     </t:template>
                     <!-- parts 는 여러 개의 값을 묶어서 하나의 속성에 바인딩할 때 쓰는 거
-                    type: 'sap.ui.model.type.Currency' : 결과 뒤에 통화 코드도 같이 표시 (false면 숫자만)
-                    formatOptions: {showMeasure: true } : 단위를 같이 보여줘 말아(ex USD냐 KRW냐)  -->
+                    type: 'sap.ui.model.type.Currency' : 결과 뒤에 통화 코드도 같이 표시 
+                    formatOptions: {showMeasure: true } : 단위를 같이 보여줘 말아(ex USD냐 KRW냐) false면 숫자만 -->
 
                 </t:Column>
 
@@ -74,7 +74,7 @@
         <!-- 이거 겁나 어려웟으니까 제발 공부 ㄱ -->
 
 
-<t:Table
+        <t:Table
             rows="{Mat>/matSet}"
             selectionMode="Single"
             selectionBehavior="Row"
@@ -130,5 +130,69 @@
             </t:columns>
 		</t:Table>
 
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~ 실습~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <t:Table
+            rows="{Order>/orderSet}"
+            selectionMode="Single"
+            selectionBehavior="RowSelector"
+            paste="onPaste"
+            ariaLabelledBy="title">
+             <t:extension>   
+                <OverflowToolbar style="Clear">
+                    <Title id="Top" text="Order List"/>
+                </OverflowToolbar>
+            </t:extension>
+
+            <t:columns>
+                <t:Column width="6rem">
+                    <Label text="Order No" />
+                    <t:template>
+                        <Text text="{Order>Ordno}" wrapping="false" /> 
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="8rem">
+                    <Label text="Airline" />
+                    <t:template>
+                        <Text text="{Order>Carrid}" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="FlightNo" />
+                    <t:template>
+                        <Text text="{Order>Connid}"/>                    
+                    </t:template>   
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="Seats" />
+                    <t:template>
+                        <Text text="{Order>Seats}"/>                    
+                    </t:template>   
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="Amount" />
+                    <t:template>
+                        <Text text="{
+                            parts:[{path:'Order>Amount'},{path:'Order>Curr'}],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: {showMeasure: true }
+                            }" wrapping="false" />                     
+                    </t:template>   
+                </t:Column>
+
+                <t:Column width="10rem">
+                    <Label text="Curr" />
+                    <t:template>
+                        <Text text="{Order>Curr}" />                    
+                    </t:template>   
+                </t:Column>
+
+                
+            </t:columns>
+		</t:Table>
     </Page>
 </mvc:View>

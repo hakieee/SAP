@@ -19,7 +19,9 @@ sap.ui.define([
                         };
 
             this.getView().setModel(new JSONModel(oGrid));
-            this.getView().setModel(new JSONModel("/data/MatSet.json"), "Mat");
+            this.getView().setModel(new JSONModel("/data/MatSet.json"), "Mat"),
+            this.getView().setModel(new JSONModel("/data/Order.json"), "Order");
+
 
 
         }

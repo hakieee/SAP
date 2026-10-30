@@ -1,0 +1,56 @@
+<mvc:View controllerName="code2.fiori.vizchart01.codefiorivizchart01.controller.VizChart01View"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <viz:VizFrame id="idVizFrame" uiConfig="{applicationSet:'fiori'}"
+                    width="45em" height='35em'  vizType='pie'
+                    vizProperties= "{
+                                        plotArea :  { drawingEffect : 'glossy' },
+                                        legend   :  { drawingEffect : 'glossy' },
+                                        title    :  { text : 'Material Price Status', visible : false }
+                                    }">    <!-- vizType 에 따라 차트 모양이 바뀜. 밑에 uid는 차트 모양에 따라 살짝씩 달라짐 
+                                                vizProperties = json 형태로 써야함. 찾는 위치 : Constructor의 documentation 링크 들어가서 찾아보면 됨
+                                                근데 웬만하면 찾지 마삼 ㅋㅋ 남들 컨CV 할동안 documentation 찾아보고 잇을거임 ? ㅋㅋ -->
+                    
+
+<!-- vizframe 은 영역이 나누어져 있음 : Dimension - Measure, dataset - feed -->
+
+
+                    <!-- dataset = 데이터를 정의하는 곳  -->
+                    <viz:dataset>
+                        <viz.data:FlattenedDataset data="{/matSet}">
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition name="Material"
+                                    value="{Matnr}" />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition name="Net Price"
+                                    value="{Netpr}" />
+                                <viz.data:MeasureDefinition name="Sales Price"
+                                    value="{Dmbtr}" />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+
+                    <viz:feeds>
+                        <viz.feeds:FeedItem uid="size" type="Measure"
+                            values="Net Price" />         <!-- values = "Revenue" -> 위에서 name 으로 정의한 Revenue의 내용이 온거임 -->
+                        <viz.feeds:FeedItem uid="size" type="Measure"
+                            values="Sales Price" /> 
+
+                        <viz.feeds:FeedItem uid="color" type="Dimension"
+                            values="Material" />
+                        <!-- 나는 measure이 5개 있으면 그중에 한개만 출력하고 싶어 -> feeds에서 하나만 쓰면 됨 -->
+                    </viz:feeds>
+                    <viz:dependents>
+                        <viz:Popover id="idPopOver"></viz:Popover>
+                    </viz:dependents>
+                </viz:VizFrame>
+
+
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,9 @@
+{
+    "orderSet" : [
+        {"Ordno": "OD001", "Carrid": "KE", "Connid": "0901", "Seats": 2, "Amount": 450000, "Curr": "KRW"},
+        {"Ordno": "OD002", "Carrid": "JL", "Connid": "0405", "Seats": 1, "Amount": 38000,  "Curr": "JPY"},
+        {"Ordno": "OD003", "Carrid": "AA", "Connid": "0017", "Seats": 3, "Amount": 1250.5, "Curr": "USD"},
+        {"Ordno": "OD004", "Carrid": "LH", "Connid": "0400", "Seats": 1, "Amount": 620,    "Curr": "EUR"},
+        {"Ordno": "OD005", "Carrid": "KE", "Connid": "0705", "Seats": 4, "Amount": 980000, "Curr": "KRW"}
+    ]
+}
